@@ -148,7 +148,10 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Show chart' ,style: Theme.of(context).textTheme.headline6,),
+                  Text(
+                    'Show chart',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
                   Switch(
                     value: _showChart,
                     onChanged: (val) {
@@ -183,7 +186,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
     return Platform.isIOS
-        ? CupertinoPageScaffold(child: pageBody)
+        ? CupertinoPageScaffold(
+            child: pageBody,
+            navigationBar: appBar,
+          )
         : Scaffold(
             appBar: appBar,
             body: pageBody,
